@@ -19,26 +19,28 @@
         <div class="my-10 mx-auto p-2 md:p-0 md:w-11/12 lg:w-10/12 xl:w-9/12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             <!-- Film -->
             <div v-for="film in films" :key="film.id" class="">
-                <div class="relative">
-                    <!-- Fond sombre -->
-                    <div class="absolute w-full h-full bg-black bg-opacity-20"></div>
-                    <!-- Note -->
-                    <span class="absolute top-2 right-2 text-white">{{film.vote_average}}</span>
-                    <!-- Image -->
-                    <img class="w-full h-auto" :src="'http://image.tmdb.org/t/p/w500'+film.poster_path"
-                        alt="">
-                </div>
-                <div class="px-2">
-                    <!-- Titre -->
-                    <h3 class="text-xl font-bold capitalize">{{film.title}}</h3>
-                    <!-- Informations -->
-                    <div class="flex justify-between">
-                        <!-- Date sortie -->
-                        <span>{{film.release_date}}</span>
-                        <!-- Durée -->
-                        <span>120m</span>
+                <a :href="'detail.html?film_id='+film.id">
+                    <div class="relative">
+                        <!-- Fond sombre -->
+                        <div class="absolute w-full h-full bg-black bg-opacity-20"></div>
+                        <!-- Note -->
+                        <span class="absolute top-2 right-2 text-white">{{film.vote_average}}</span>
+                        <!-- Image -->
+                        <img class="w-full h-auto" :src="'http://image.tmdb.org/t/p/w500'+film.poster_path"
+                            alt="">
                     </div>
-                </div>
+                    <div class="px-2">
+                        <!-- Titre -->
+                        <h3 class="text-xl font-bold capitalize">{{film.title}}</h3>
+                        <!-- Informations -->
+                        <div class="flex justify-between">
+                            <!-- Date sortie -->
+                            <span>{{film.release_date}}</span>
+                            <!-- Durée -->
+                            <span>120m</span>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </main>
